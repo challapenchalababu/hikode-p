@@ -43,11 +43,12 @@ exports.getCoachingSession = async (req, res, next) => {
 exports.createCoachingSession = async (req, res, next) => {
   try {
     // Add user to req.body as coach
-    req.body.coach = req.user.id;
-
+    req.body.coach = req.user._id;
+    console.log("userrrrrrrrrrrrrr", req.user)
+    console.log("reqqqq body", req.body)
     // Check for required fields
-    const { title, description, category, duration } = req.body;
-    if (!title || !description || !category || !duration) {
+    const { title, description, category, duration, sessions, location } = req.body;
+    if (!title || !description || !category || !duration || !sessions || !location) {
       return next(new ErrorResponse('Please provide all required fields', 400));
     }
 

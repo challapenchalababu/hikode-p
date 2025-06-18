@@ -37,15 +37,29 @@ const CoachingSchema = new mongoose.Schema(
     },
     duration: {
       type: Number,
-      required: [true, 'Please specify duration in minutes'],
+      // required: [false, 'Please specify duration in minutes'],
       min: [15, 'Duration must be at least 15 minutes']
     },
+    sessions:{
+      type:Number,
+      required:[true, "sessoins are required."]
+    },
+    location:{
+      type:String,
+      required: [true, "Location is required."]
+    },
+    isOnline:{
+      type:Boolean,
+    },
+    // isOffering:{
+    //   type:Boolean,
+    // },
     specialties: {
       type: [String],
       default: []
     },
     yearsOfExperience: {
-      type: Number,
+      type: String,
       min: [0, 'Years of experience cannot be negative']
     },
     professionalBio: {

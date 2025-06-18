@@ -47,6 +47,7 @@ app.use('/api/v1/users', require('./routes/users'));
 app.use('/api/v1/roles', require('./routes/roles'));
 app.use('/api/v1/permissions', require('./routes/permissions'));
 app.use('/api/v1/coaching', require('./routes/coaching'));
+app.use('/api/v1/jobs', require('./routes/Jobs'));
 
 // Error handler middleware
 app.use(errorHandler);
