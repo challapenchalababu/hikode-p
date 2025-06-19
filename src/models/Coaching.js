@@ -29,11 +29,11 @@ const CoachingSchema = new mongoose.Schema(
       default: false
     },
     price: {
-      type: Number,
-      required: function() {
-        return !this.isFree;
-      },
-      min: [0, 'Price cannot be negative']
+      type: String,
+      // required: function() {
+      //   return !this.isFree;
+      // },
+      // min: [0, 'Price cannot be negative']
     },
     duration: {
       type: Number,
@@ -51,9 +51,17 @@ const CoachingSchema = new mongoose.Schema(
     isOnline:{
       type:Boolean,
     },
-    // isOffering:{
-    //   type:Boolean,
-    // },
+    isOffering:{
+      type:Boolean,
+    },
+    access:{
+      type:String,
+      required: [true, "Access is required."]
+    },
+    status:{
+      type:String,
+      required: [true, "Status is required."]
+    },
     specialties: {
       type: [String],
       default: []
